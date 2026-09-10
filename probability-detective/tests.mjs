@@ -1,0 +1,4 @@
+import assert from'node:assert/strict';import{createRequire}from'node:module';const require=createRequire(import.meta.url);const M=require('./model.js');
+assert.deepEqual(M.coin(100,.5,M.seeded(42)),M.coin(100,.5,M.seeded(42)));assert.deepEqual(M.coin(10,0,M.seeded(1)),{heads:0,tails:10,n:10,p:0});assert.deepEqual(M.coin(10,1,M.seeded(1)),{heads:10,tails:0,n:10,p:1});
+for(const two of[false,true]){const r=M.dice(1000,two,M.seeded(7));assert.equal(Object.values(r.counts).reduce((a,b)=>a+b,0),1000);for(const v of Object.keys(r.counts).map(Number))assert.ok(v>=(two?2:1)&&v<=(two?12:6))}
+assert.equal(M.diceTheory(7,true),6/36);assert.equal(M.diceTheory(2,true),1/36);assert.equal(M.game(2,2).advantage,'equal');assert.equal(M.game(2,4).advantage,'b');console.log('9 seeded probability checks passed');
