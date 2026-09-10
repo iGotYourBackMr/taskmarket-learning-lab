@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Little Lantern Garden</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div><span class="eyebrow">GROWN-UP + CHILD PLAY</span><h1>Little Lantern Garden</h1></div>
+    <div class="top-actions"><button id="sound" class="small" aria-pressed="false">🔊 Sound on</button><button id="reset" class="small">↻ Start over</button></div>
+  </header>
+
+  <main>
+    <section id="welcome" class="screen active" aria-labelledby="welcome-title">
+      <div class="hero-art" aria-hidden="true"><span class="sun">☀</span><span class="flower circle red"></span><span class="flower triangle blue"></span><span class="flower square yellow"></span></div>
+      <div class="hero-copy">
+        <p class="kicker">Three tiny games. No score. Stop any time.</p>
+        <h2 id="welcome-title">Match, sort and count together</h2>
+        <p>For a child around age three with a grown-up nearby. The first turn is shown. Every activity works with taps; sound is optional and begins only after you start.</p>
+        <button id="start" class="primary giant">Start the garden <span aria-hidden="true">→</span></button>
+      </div>
+    </section>
+
+    <nav id="lesson-nav" class="lesson-nav" aria-label="Activities" hidden>
+      <button data-go="match" aria-current="step"><span>1</span> Match</button>
+      <button data-go="sort"><span>2</span> Sort</button>
+      <button data-go="count"><span>3</span> Count</button>
+      <button data-go="finish"><span>✓</span> Finish</button>
+    </nav>
+
+    <section id="match" class="screen activity" aria-labelledby="match-title">
+      <div class="activity-head"><div><p class="kicker">1 of 3 · SHAPE MATCH</p><h2 id="match-title">Find the same shape</h2></div><button class="small replay" data-say="Find the same shape. Tap the shape that matches the lantern.">▶ Hear it</button></div>
+      <div class="prompt-card">
+        <p id="match-prompt">Watch the first turn: the circle finds the circle.</p>
+        <div id="match-target" class="target" aria-label="Target shape"></div>
+      </div>
+      <div id="match-choices" class="choice-row" role="group" aria-label="Shape choices"></div>
+      <p id="match-feedback" class="feedback" role="status" aria-live="polite"></p>
+      <div class="activity-actions"><button id="match-demo" class="secondary">Show me</button><button id="match-next" class="primary" disabled>Next garden game →</button></div>
+    </section>
+
+    <section id="sort" class="screen activity" aria-labelledby="sort-title">
+      <div class="activity-head"><div><p class="kicker">2 of 3 · ONE THING AT A TIME</p><h2 id="sort-title">Help this flower find its garden</h2></div><button class="small replay" data-say="Look at the flower. Tap the garden that matches.">▶ Hear it</button></div>
+      <div class="sort-rule"><strong id="sort-rule">Sort by shape</strong><span id="sort-rule-cue">Match the outline, not the colour.</span></div>
+      <div id="sort-object" class="sort-object" aria-label="Flower to sort"></div>
+      <div id="sort-bins" class="bin-row" role="group" aria-label="Garden choices"></div>
+      <p id="sort-feedback" class="feedback" role="status" aria-live="polite"></p>
+      <div class="activity-actions"><button id="sort-hint" class="secondary">Show a clue</button><button id="sort-next" class="primary" disabled>Count fireflies →</button></div>
+    </section>
+
+    <section id="count" class="screen activity" aria-labelledby="count-title">
+      <div class="activity-head"><div><p class="kicker">3 of 3 · COUNT 1, 2, 3</p><h2 id="count-title">How many fireflies?</h2></div><button class="small replay" data-say="Let's count each firefly. Tap show one at a time.">▶ Hear it</button></div>
+      <div class="count-card">
+        <div id="fireflies" class="fireflies" aria-label="Firefly collection"></div>
+        <button id="reveal" class="secondary giant">Show one at a time</button>
+      </div>
+      <p class="instruction">Now choose the jar with the same number.</p>
+      <div id="count-choices" class="choice-row jars" role="group" aria-label="Number choices"></div>
+      <p id="count-feedback" class="feedback" role="status" aria-live="polite"></p>
+      <div class="activity-actions"><button id="count-new" class="secondary">New arrangement</button><button id="count-next" class="primary" disabled>Finish →</button></div>
+    </section>
+
+    <section id="finish" class="screen finish" aria-labelledby="finish-title">
+      <p class="kicker">GARDEN COMPLETE</p><h2 id="finish-title">You matched, sorted and counted!</h2>
+      <div class="badges"><div>◯<span>Shapes</span></div><div>⇢<span>One rule</span></div><div>● ● ●<span>1 to 3</span></div></div>
+      <p>Try it away from the screen: find one circle, two square things and three triangle things in the room. A grown-up can offer only two choices when that feels better.</p>
+      <button id="play-again" class="primary giant">Play again</button>
+      <details class="adult-note"><summary>Grown-up guide</summary><p>This is playful practice, not an assessment. Name the shape or colour, wait, and model one answer if needed. Reduce to two choices, cover one bin, or pause after any game. Progress stays only in this open page and Start over clears it.</p></details>
+    </section>
+  </main>
+
+  <footer>Private by design: no login, tracking, uploads or saved child data.</footer>
+  <script src="model.js"></script><script src="app.js"></script>
+</body>
+</html>

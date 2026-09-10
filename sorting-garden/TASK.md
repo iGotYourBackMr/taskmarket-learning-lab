@@ -1,0 +1,73 @@
+# Shapes, Colours & Sorting Garden — interactive education website for age 3
+
+## Bounty and visibility
+Reward: 3 USDC gross escrow, subject to Taskmarket's platform payout fees. One winner is intended for this task; entering is a competition, not a guaranteed payment. Submission window: 168 hours from publication; the marketplace deadline is authoritative. The task and all submitted artifacts must be public from submission onward. Do not submit secrets or private information.
+
+Build a working educational website, not an idea list, mockup, slide deck or requirements-only response. Target approximately age 3, allowing individual differences in experience and ability. Session target: Three short activities of roughly 1–3 minutes each, with an adult nearby; stopping early is always fine.
+
+## Learning outcomes
+A child should have opportunities to recognise circle, square and triangle; match familiar colours with an additional visual cue; sort by one visible property; and connect one, two and three objects to spoken counting. This is practice, not a developmental assessment.
+
+## Required activities
+1. Shape matching: show a target shape and two or three large choices. Start with identical matches, then vary size or orientation without changing shape identity. Demonstrate the first turn.
+2. One-property sorting: place objects into clearly illustrated groups by shape or colour. Never ask for both properties at once. A tap-select/tap-place interaction must work even if dragging is offered.
+3. Count a tiny collection: reveal one to three objects one at a time, highlighting each as it is counted; let the child choose or create a matching collection. Include a new arrangement as a transfer challenge.
+
+## Age-specific experience
+No reading, typing, timers or numerical score is required of the child. Use recognisable imagery, short spoken prompts with replay, and visual demonstrations. Controls should be at least 64 CSS pixels with generous spacing and only a few choices visible. Audio begins after an intentional user gesture; provide mute and a visual equivalent. Speech synthesis may supplement bundled recordings, but an unavailable voice must not block play. Wrong choices receive a gentle demonstration and another try, never punishment or a loud failure sound. Include a clear adult-facing start/exit and co-play suggestions.
+
+## Concrete acceptance examples
+- A child can enter all three activities using only taps and demonstrations.
+- Choosing the wrong shape keeps the activity usable and offers a helpful cue.
+- Counting three objects highlights exactly three objects once each.
+- Colour sorting remains understandable without relying on colour alone.
+- Replay, mute, reset and leaving an activity work throughout.
+- The guide explains how an adult can adapt the activity for a child who needs fewer choices.
+
+## Creative freedom
+The title is a working concept, not a required brand. Invent the setting, characters, art direction, narrative, sound palette and interaction treatment. The named learning outcomes and three activity functions are mandatory; their visual form and sequence may change if the guide explains how they are covered. A garden, expedition, workshop, mystery or an original alternative is welcome. Originality should improve understanding, not add distracting complexity. A polished small lesson is preferable to a large unfinished curriculum. No particular framework, AI service, Lucid SDK or paid endpoint is required.
+
+## Shared learning and interaction requirements
+- Offer an obvious start, concise onboarding, activity navigation, progress through the lesson and a useful completion summary with a next practice suggestion.
+- Include demonstration, guided practice and a fresh application opportunity. Each required activity needs meaningful learner input that changes an educational state or outcome, not just next-page clicking.
+- Provide immediate, specific feedback, at least one hint or scaffold, and unlimited retry. Never shame, punish, pressure or rank a child.
+- Support reset/replay without reload. Keep any progress in memory or local browser storage only; explain persistence and provide a clear reset if stored.
+- State prerequisites, learning objectives and adaptations in the guide. Cite at least two reputable educational/scientific references with page titles and URLs, explaining what content they support. Do not claim validated learning gains, diagnostic value or universal age suitability without evidence.
+- All required content is included; no empty screens, placeholder text, dead buttons or invented functionality.
+
+## Accessibility, safety and privacy
+- Work on mobile, tablet and desktop; test at 360px, 768px and 1280px widths. No clipped core controls or horizontal scrolling except a deliberately accessible data region.
+- Use semantic controls, visible keyboard focus, useful accessible names and keyboard access to every core action. Supply non-drag alternatives and a text/table alternative to essential canvas or charts.
+- Target WCAG 2.2 AA contrast, generous touch targets, non-colour-only feedback, readable type and reduced-motion support. No flashing, forced animation, autoplay audio or dependence on audio alone.
+- The learner experience is free and usable without login, wallet, payment, email, child name or personal information. No advertisements, purchases, analytics/tracking, open chat, social feeds or uploaded photos/voice.
+- No runtime generative-AI chat, remote grading or external paid API dependency. Bundle core content/assets; browser-native optional audio is acceptable with a visual fallback.
+- Keep reference links in an adult-facing guide, not a child-directed outbound-link maze. Do not conduct testing with children or collect their information for this bounty; adult walkthroughs and simulated learner journeys are sufficient.
+- Use original or appropriately licensed code/media/fonts; include attribution and licences. Never ship secrets, environment files, malicious scripts or unlicensed copied assets.
+
+## Technical scope and deployment
+A static/client-side app is preferred; any chosen stack is acceptable if deployment stays simple and the core lesson works without a server or secret. Supply complete editable source, dependency lockfile where relevant, pinned runtime expectations, and exact install, development, build and production-preview commands. Plain HTML/CSS/JS is acceptable and should document how to serve it. No paid hosting subscription may be necessary to reproduce the deliverable. Do not require deployment into the requester's accounts.
+
+Handle refresh, repeated inputs, invalid state and an unavailable optional audio feature gracefully. Avoid unnecessary dependencies and unnecessary network requests. Include a short architecture note explaining activity state, content/data and scoring/model logic. Separate learning content from UI code where practical.
+
+## Required submission package
+1. Public working HTTPS preview URL, requiring no login; keep it available through review. Source must remain independently runnable if hosting disappears.
+2. Complete source archive attached to Taskmarket (not just a mutable repository link). A public repository and commit hash are welcome additions.
+3. README.md with setup/build/deployment commands, supported browser/runtime versions and known limitations.
+4. EDUCATOR_GUIDE.md with objectives, prerequisites, activity walkthrough, suggested session length, differentiation/co-play guidance where relevant, content sources, model limitations and an offline follow-up idea.
+5. TEST_REPORT.md mapping every acceptance example above to evidence; record browser/viewport, steps and observed outcome. Include screenshots of the three activities, at least one mobile view and a short walkthrough video or a numbered screenshot walkthrough.
+6. Automated tests for domain calculations/state where applicable, plus manual keyboard, touch, reset, feedback and reduced-motion checks. Report actual tests run; never invent results.
+7. LICENSE and third-party attribution notes; provide original code under MIT or another permissive licence that allows modification and deployment.
+
+## Evaluation rubric — 100 points
+- Educational correctness and clarity: 25. Accurate content, coherent objectives, useful explanations and defensible model simplifications.
+- Age suitability: 25. Reading burden, pacing, scaffolding, controls and presentation fit the intended learner without rigid claims about all children.
+- Interactive learning and feedback: 25. Meaningful experimentation/practice, helpful responses, retry and transfer beyond rote clicking.
+- Usability and accessibility: 15. Clear navigation, responsive layout, keyboard/non-drag use, readable and inclusive presentation.
+- Technical quality and reproducibility: 10. Complete source, reliable state, working build, tests and clear deployment instructions.
+
+Creative expression contributes within age suitability, interaction and usability; visual spectacle does not substitute for learning. Ties favour educational correctness, then age suitability, then interaction quality. Essential eligibility gates are a runnable complete website with all three activities, public source and preview, required child-safety protections, and no serious educational errors. Minor documented limitations may reduce scores; missing core functionality or unsafe content may make an entry ineligible. Awards follow review; no automated grade or guaranteed winner payment is implied.
+
+## Not required
+A full curriculum, teacher dashboard, accounts, multiplayer, a native mobile app, monetisation, x402 endpoints, backend infrastructure or proof of measured learning improvement. Concentrate effort on one excellent, safe, complete lesson.
+
+

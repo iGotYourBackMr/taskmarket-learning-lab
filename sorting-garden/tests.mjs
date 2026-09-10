@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import {createRequire} from 'node:module';
+const require=createRequire(import.meta.url);
+const M=require('./model.js');
+assert.equal(M.isShapeMatch('circle','circle'),true);
+assert.equal(M.isShapeMatch('circle','square'),false);
+assert.equal(M.isShapeMatch('hexagon','hexagon'),false);
+assert.equal(M.belongs({shape:'triangle',colour:'red'},'triangle','shape'),true);
+assert.equal(M.belongs({shape:'triangle',colour:'red'},'red','colour'),true);
+assert.equal(M.belongs({shape:'triangle',colour:'red'},'blue','colour'),false);
+for(const n of [1,2,3]) assert.equal(M.countChoice(n,n),true);
+assert.equal(M.countChoice(3,2),false);
+assert.equal(M.countChoice(0,0),false);
+console.log('9 domain checks passed');
