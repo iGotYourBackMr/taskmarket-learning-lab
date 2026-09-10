@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Evidence Desk</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header><div><span class="eyebrow">EVIDENCE DESK</span><h1>Read past the headline.</h1></div><button id="reset">Reset investigation</button></header>
+<main>
+  <section id="welcome" class="screen active hero">
+    <div><p class="eyebrow">A 10–15 MINUTE DATA CASE</p><h2>Can you trust this claim?</h2><p>Change a graph, test two samples and uncover a third variable. The data are original, synthetic and fictional.</p><button id="start" class="primary">Open case file →</button></div>
+    <div class="case-card" aria-hidden="true"><span>CLAIM</span><b>“A dramatic change!”</b><i></i><i></i><i></i><strong>Check the evidence.</strong></div>
+  </section>
+  <nav id="nav" hidden aria-label="Case activities"><button data-go="graph"><b>1</b> Graph</button><button data-go="sample"><b>2</b> Sample</button><button data-go="correlation"><b>3</b> Correlation</button><button data-go="verdict"><b>✓</b> Verdict</button></nav>
+
+  <section id="graph" class="screen">
+    <p class="eyebrow">1 · GRAPH FRAMING</p><h2>Same values, different impression</h2><p>Fictional Luma School recycling rate, January–June (%). Move the axis limits; the bars use the same six values.</p>
+    <div class="controls"><label>Axis minimum (%) <input id="axis-min" type="range" min="0" max="61" value="0"><output id="min-out">0</output></label><label>Axis maximum (%) <input id="axis-max" type="range" min="69" max="100" value="100"><output id="max-out">100</output></label><button id="axis-reset">Reset 0–100</button></div>
+    <div class="plot-shell"><div class="y-label">Recycling rate (%)</div><div id="bar-chart" class="bar-chart" aria-label="Bar chart of recycling rate by month"></div><div class="x-label">Month</div></div>
+    <div class="table-wrap"><table><caption>Underlying values (unchanged by axis)</caption><thead><tr><th>Month</th><th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th><th>May</th><th>Jun</th><th>Mean</th></tr></thead><tbody><tr><th>Rate (%)</th><td>62</td><td>64</td><td>63</td><td>66</td><td>67</td><td>68</td><td id="mean-cell">65.0</td></tr></tbody></table></div>
+    <p id="graph-feedback" class="feedback" role="status" aria-live="polite">Try a narrow range such as 60–70, then compare it with 0–100.</p>
+    <div class="actions"><button id="compare-axis" class="primary">Record what changed</button><button id="graph-next" disabled>Investigate samples →</button></div>
+  </section>
+
+  <section id="sample" class="screen">
+    <p class="eyebrow">2 · SAMPLING INVESTIGATION</p><h2>Who had a chance to answer?</h2><p>A fictional 200-card population has 100 North and 100 South cards. On the question “Support a longer lunch break?”, North has 70 yes cards and South has 30. The population result is exactly 50% yes.</p>
+    <div class="controls"><label>Sampling method <select id="sample-method"><option value="random">Less biased: simple random cards</option><option value="lobby">Biased: 80% North-lobby cards</option></select></label><label>Sample size <select id="sample-size"><option>20</option><option>100</option></select></label><button id="draw" class="primary">Draw sample</button></div>
+    <div class="meter"><span>Population yes</span><i><b style="width:50%"></b></i><strong>50%</strong></div><div id="sample-meter" class="meter muted"><span>Sample yes</span><i><b></b></i><strong>—</strong></div>
+    <div class="table-wrap"><table><caption>Population and latest sample composition</caption><thead><tr><th>Group</th><th>Population cards</th><th>Population yes</th><th>Sample cards</th><th>Sample yes</th></tr></thead><tbody id="sample-table"><tr><th>North</th><td>100</td><td>70</td><td>—</td><td>—</td></tr><tr><th>South</th><td>100</td><td>30</td><td>—</td><td>—</td></tr></tbody></table></div>
+    <p id="sample-feedback" class="feedback" role="status" aria-live="polite">Compare both methods. A large sample can still miss the population if recruitment stays biased.</p>
+    <div class="actions"><button id="sample-hint">What does “biased” mean here?</button><button id="sample-next" disabled>Check correlation →</button></div>
+  </section>
+
+  <section id="correlation" class="screen">
+    <p class="eyebrow">3 · CORRELATION CHALLENGE</p><h2>A third variable changes the story</h2><p>Eight fictional puzzle learners recorded weekly practice sessions and score. Their prior course is a plausible third variable.</p>
+    <div class="controls"><label>View <select id="group-view"><option value="all">Everyone combined</option><option value="Intro">Intro course only</option><option value="Advanced">Advanced course only</option></select></label></div>
+    <div class="plot-shell"><div class="y-label">Puzzle score (points)</div><div id="scatter" class="scatter" aria-label="Scatter plot of weekly practice sessions and puzzle score"></div><div class="x-label">Practice sessions per week</div></div>
+    <p id="corr-stat" class="stat"></p><div class="table-wrap"><table><caption>Synthetic learner records</caption><thead><tr><th>Prior course</th><th>Sessions/week</th><th>Score (points)</th></tr></thead><tbody id="corr-table"></tbody></table></div>
+    <fieldset><legend>Which conclusion is best supported?</legend><label><input type="radio" name="corr-answer" value="cause">More practice caused lower scores.</label><label><input type="radio" name="corr-answer" value="third">The combined data show association, but prior course changes the pattern; causation is not established.</label><label><input type="radio" name="corr-answer" value="none">There is no relationship in any view.</label></fieldset>
+    <p id="corr-feedback" class="feedback" role="status" aria-live="polite"></p><div class="actions"><button id="corr-hint">Show a reasoning hint</button><button id="check-corr" class="primary">Check conclusion</button><button id="corr-next" disabled>Write the verdict →</button></div>
+  </section>
+
+  <section id="verdict" class="screen">
+    <p class="eyebrow">FINAL · FICTIONAL HEADLINE CHECK</p><h2>Build a cautious conclusion</h2><p>Headline: “More practice makes puzzle scores worse, study proves.” Choose a claim, supporting observation and limitation. This headline and every record are fictional.</p>
+    <div class="verdict-grid"><label>Claim<select id="claim"><option value="">Choose…</option><option value="cause">Practice causes worse scores.</option><option value="association">In the combined synthetic data, more sessions are associated with lower scores.</option><option value="none">Practice never helps anyone.</option></select></label><label>Supporting observation<select id="support"><option value="">Choose…</option><option value="look">The zoomed picture looked dramatic.</option><option value="patterns">The combined trend is negative, while each prior-course group trends upward.</option><option value="everyone">Every learner agreed.</option></select></label><label>Limitation<select id="limit"><option value="">Choose…</option><option value="none">The sample is big enough, so there are no limits.</option><option value="third">Prior course is a plausible third variable, and synthetic observational data cannot establish cause.</option><option value="proof">Correlation proves the headline.</option></select></label></div>
+    <button id="check-verdict" class="primary">Review verdict</button><p id="verdict-feedback" class="feedback" role="status" aria-live="polite"></p>
+    <aside><h3>Evidence notebook</h3><ul id="notebook"><li>Complete each activity to record an observation.</li></ul></aside><button id="finish" disabled>Finish case →</button>
+  </section>
+
+  <section id="complete" class="screen finish"><p class="eyebrow">CASE CLOSED — CAREFULLY</p><h2>A trustworthy conclusion shows its limits.</h2><div class="summary"><div><b>Graph</b><span>Check scale and underlying values.</span></div><div><b>Sample</b><span>Ask who could be included.</span></div><div><b>Correlation</b><span>Look for third variables before causal claims.</span></div></div><p>Next practice: find a chart in a news story and write one question about its scale, sample and causal language.</p><button id="again" class="primary">Run another case</button></section>
+</main>
+<footer>Original synthetic data only. No login, tracking, uploads, grading or personal data.</footer>
+<script src="model.js"></script><script src="app.js"></script>
+</body></html>

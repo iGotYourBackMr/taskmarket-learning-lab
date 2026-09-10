@@ -1,0 +1,17 @@
+import {createRequire} from 'node:module';
+import assert from 'node:assert/strict';
+const require=createRequire(import.meta.url),M=require('./model.js');
+assert.equal(M.population.length,200);
+assert.equal(M.mean(M.graph.map(x=>x.value)),65);
+const a=M.sample(20,'random',M.seeded(42)),b=M.sample(20,'random',M.seeded(42));
+assert.deepEqual(a,b,'seeded samples must be reproducible');
+assert.equal(new Set(a.map(x=>x.id)).size,20,'simple sample is without replacement');
+const biased20=M.summarize(M.sample(20,'lobby',M.seeded(7)));
+assert.equal(biased20.North.cards,16);assert.equal(biased20.South.cards,4);
+const biased100=M.summarize(M.sample(100,'lobby',M.seeded(7)));
+assert.equal(biased100.North.cards,80);assert.equal(biased100.South.cards,20);
+assert.ok(M.corr(M.correlation)<0,'combined correlation should be negative');
+assert.ok(M.corr(M.correlation.filter(x=>x.course==='Intro'))>.99);
+assert.ok(M.corr(M.correlation.filter(x=>x.course==='Advanced'))>.99);
+assert.equal(M.summarize(M.population).rate,.5);
+console.log('10 deterministic evidence-model checks passed');
